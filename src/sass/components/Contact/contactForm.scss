@@ -1,0 +1,69 @@
+@use '../../includes/mixins' as mx;
+@use '../../includes/colors' as color;
+
+
+#main-contact {
+  position: relative;
+  &::before {
+    @include mx.bgColor(-3, color.$black, 0.6);
+  }
+  &::after {
+    @include mx.bgHeroImg(-5, '/images/contact-bg.webp', 0.9);
+    background-attachment: fixed;
+  }
+}
+
+#contact-form {
+  border-radius: 0.5rem;
+  position: relative;
+  &::before {
+    @include mx.bgColor(-3, color.$black, 0.8);
+    border-radius: 0.5rem;
+  }
+}
+
+.form-div {
+  @include mx.flexCol(center, flex-start);
+  label {
+    width: 100%;
+    span {
+      font-size: 1.25rem !important;
+    }
+    input {
+      width: 100%;
+    }
+  }
+  .textarea-label {
+    width: 100%;
+  }
+}
+
+.form-div.textarea-div {
+  width: 100%;
+}
+
+.floating-label > span {
+  border-radius: 0.5rem;
+  padding: 0.5rem
+}
+
+.form-buttons-section button {
+  width: 7.5rem;
+}
+
+#contact-info-section {
+  border-radius: 0.5rem;
+  position: relative;
+  &::before {
+    @include mx.bgColor(-3, color.$black, 0.8);
+    border-radius: 0.5rem;
+  }
+}
+
+
+@media screen and (max-width: 1023px) {
+
+  .form-buttons-section button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,16 @@
+@use '../../includes/mixins' as mx;
+@use '../../includes/colors' as color;
+
+#home-contact-section {
+  position: relative;
+  &::before {
+    @include mx.bgColor(-3, color.$black, 0.3);
+  }
+  &::after {
+    @include mx.bgHeroImg(-5, '/images/home-contact.webp', 1);
+  }
+}
+
+#home-contact-title, .home-contact-text {
+  text-shadow: 0rem 0rem 0.25rem color.$black;
+}

@@ -1,0 +1,17 @@
+@use '../../includes/mixins' as mx;
+@use '../../includes/colors' as color;
+
+#home-quote-section {
+  position: relative;
+  &::before {
+    @include mx.bgColor(-3, color.$black, 0.2);
+  }
+  &::after {
+    @include mx.bgHeroImg(-5, '/images/home/quote-section.webp', 0.9);
+    background-attachment: fixed;
+  }
+}
+
+.home-blockquote {
+  text-shadow: 0rem 0rem 0.25rem color.$black;
+}

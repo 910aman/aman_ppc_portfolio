@@ -1,0 +1,39 @@
+@media screen and (max-width: 640px) {
+
+  .about-section-profile-figure {
+    width: 100%;
+  }
+
+  .about-section-article {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
+  .about-section-profile-figure {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .about-section-profile-figure {
+    width: 40%;
+  }
+
+  .about-section-article {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .about-section-profile-figure {
+    width: 30%;
+  }
+
+  .about-section-article {
+    width: 50%;
+  }
+}

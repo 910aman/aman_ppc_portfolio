@@ -1,0 +1,52 @@
+@use './includes/mixins' as mx;
+@use './includes/colors' as color;
+@use './includes/typography' as font;
+@use './includes/variables' as var;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  text-transform: capitalize;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: font.$titleFont;
+  text-wrap: balance;
+}
+
+.text-shadow {
+  text-shadow: 0rem 0rem 0.25rem color.$black;
+}
+
+.hover-shadowless {
+  &:hover {
+    text-shadow: 0rem 0rem 0rem;
+  }
+}
+
+p {
+  font-family: font.$textFont;
+  margin-bottom: 0.75rem;
+  text-wrap: pretty;
+}
+
+a {
+  font-family: font.$textFont;
+}
+
+button {
+  cursor: pointer;
+}
+
+@media all and (max-width: 575px) {
+
+  p {
+    font-size: 1rem;
+  }
+}

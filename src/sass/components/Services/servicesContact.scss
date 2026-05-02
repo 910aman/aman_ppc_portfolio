@@ -1,0 +1,13 @@
+@use '../../includes/mixins' as mx;
+@use '../../includes/colors' as color;
+
+
+#service-contact-section {
+  position: relative;
+  &::before {
+    @include mx.bgColor(-3, color.$black, 0.2)
+  }
+  &::after {
+    @include mx.bgHeroImg(-5, '/images/services-contact.webp', 0.9);
+  }
+}

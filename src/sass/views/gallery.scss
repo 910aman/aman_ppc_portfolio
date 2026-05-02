@@ -1,0 +1,18 @@
+@use '../includes/mixins' as mx;
+@use '../includes/colors' as color;
+
+
+#gallery-contact-section {
+  position: relative;
+  &::before {
+    @include mx.bgColor(-3, color.$black, 0.3);
+  }
+  .gallery-contact-video {
+    position: absolute;
+    z-index: -5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}

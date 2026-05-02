@@ -1,0 +1,41 @@
+/*----- Global -----*/
+@use './global.scss';
+
+/*----- Includes -----*/
+@use './includes/classes';
+@use './includes/colors';
+@use './includes/mixins';
+@use './includes/typography';
+@use './includes/variables';
+
+/*----- Components -----*/
+@use './components/navbar.scss';
+
+// Home components
+@use './components/Home/bannerSlider.scss';
+@use './components/Home/aboutSection.scss';
+@use './components/Home/quoteSection.scss';
+@use './components/Home/homeGallerySlider.scss';
+@use './components/Home/homeContact.scss';
+
+// Gallery components
+@use './components/Gallery/gallerySlider.scss';
+
+// Services components
+@use './components/Services/heroServices.scss';
+@use './components//Services/servicesContact.scss';
+
+// Contact components
+@use './components/Contact/contactForm.scss';
+
+/*----- Views -----*/
+@use './views/gallery.scss';
+
+// For views
+
+/*----- Fonts & Icons -----*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+// Poppins font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
