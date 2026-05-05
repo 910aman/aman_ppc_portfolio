@@ -1,54 +1,89 @@
-# React + TypeScript + Vite
+# Studio Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern multi-page React (Vite + TypeScript) portfolio that fuses the tone of Shoaib's SkillsRoom site with the visual aesthetic of Abuzar's portfolio. It highlights services, detailed vertical pages (Web Dev, Leads Gen, Google Ads), and a contact flow backed by a Node/Express SMTP bridge.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Vite + React 19 + TypeScript
+- React Router v7
+- Custom CSS (no Tailwind/SCSS)
+- Node/Express contact API with Nodemailer (Google SMTP)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Run the frontend
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev   # http://localhost:5173
 ```
+
+### Contact API
+
+```bash
+npm run server  # http://localhost:4000/api/contact
+```
+
+Create a `.env` (copy from `.env.example`):
+
+```
+PORT=4000
+SMTP_USER=yourgmail@gmail.com
+SMTP_PASS=your_app_password
+CONTACT_RECIPIENT=client_notifications@example.com
+ALLOWED_ORIGINS=http://localhost:5173,https://shoaimstudio.com
+```
+
+### Production build
+
+```bash
+npm run build   # outputs to dist/
+```
+
+Use `npm run preview` to test the bundle locally.
+
+## Project Structure
+
+```
+src/
+  components/
+    cards/…          # Service/project cards
+    common/…         # Section headings, stats, hero, etc.
+    forms/ContactForm.tsx
+    layout/…         # Navbar + Footer
+  data/content.ts    # Centralized copy + projects
+  pages/
+    Home.tsx         # Lazy loads lower sections
+    Services.tsx
+    WebPortfolio.tsx
+    LeadsPortfolio.tsx
+    AdsPortfolio.tsx
+    Contact.tsx
+  styles/global.css
+```
+
+## Performance & SEO Notes
+
+- Critical meta tags (description, OG/Twitter, canonical) are in `index.html`.
+- Fonts are preloaded via `<link rel="preload">`.
+- Lower sections on the home page use `React.lazy` to defer rendering.
+- Contact form select arrow + focus states handled via CSS to keep accessibility high.
+
+## Deployment Tips
+
+1. Upgrade Node to 22.12+ (or 20.19+) as required by Vite 7.
+2. Serve the built `dist/` directory via your host (Vercel, Netlify, static bucket, etc.).
+3. Deploy the Express server alongside the frontend or as a serverless function. Ensure `CONTACT_RECIPIENT`, `SMTP_USER`, and `SMTP_PASS` are set in the hosting environment.
+
+## Roadmap Ideas
+
+- Swap static spotlight data with CMS/API (Sanity, Payload).
+- Add analytics (Plausible, PostHog) for conversion tracking.
+- Integrate image optimization (responsive sources) if/when screenshots get added.
+
+--- 
+Need help extending the site (e.g., new case studies or CMS integration)? Ping https://www.linkedin.com/in/muhammad-abuzar-iftikhar-714202299/.
+
