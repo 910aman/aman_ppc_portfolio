@@ -1,11 +1,11 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Layout from './components/layout/Layout';
-import Services from './pages/Services';
-import Contact from './pages/Contact';
-import Home from './pages/Home';
-import WebPortfolio from './pages/WebPortfolio';
-import LeadsPortfolio from './pages/LeadsPortfolio';
-import AdsPortfolio from './pages/AdsPortfolio';
+import Layout from './components/layout/Layout.tsx';
+import Services from './pages/Services.tsx';
+import Contact from './pages/Contact.tsx';
+import Home from './pages/Home.tsx';
+import WebPortfolio from './pages/WebPortfolio.tsx';
+import LeadsPortfolio from './pages/LeadsPortfolio.tsx';
+import AdsPortfolio from './pages/AdsPortfolio.tsx';
 
 const App = () => (
   <Layout>
